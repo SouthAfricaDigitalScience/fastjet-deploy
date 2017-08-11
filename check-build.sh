@@ -24,8 +24,8 @@ module-whatis   "$NAME $VERSION."
 setenv       FASTJET_VERSION       $VERSION
 setenv       FASTJET_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-${GCC_VERSION}
 prepend-path LD_LIBRARY_PATH   $::env(FASTJET_DIR)/lib
-setenv CPPFLAGS            "-I${FASTJET_DIR}/include $CPPFLAGS"
-setenv LDFLAGS           "-L${FASTJET_DIR}/lib $LDFLAGS"
+setenv CPPFLAGS            "-I$::env(FASTJET_DIR)/include $CPPFLAGS"
+setenv LDFLAGS           "-L$::env(FASTJET_DIR)/lib $LDFLAGS"
 MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
 
